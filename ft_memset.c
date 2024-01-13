@@ -24,23 +24,27 @@ void	*ft_memset(void *s, int c, size_t n)
 	size_t			i;
 
 	i = 0;
-	temp_s = (unsigned char *)s;
-    while(i > n)
-    {
-        temp_s[i] = (unsigned char) c;
-        i++;
-    }
-    return(s);
+	temp_s = s;
+	while (i < n)
+	{
+		temp_s[i] = (unsigned char)c;
+		i++;
+	}
+	return (s);
 }
 
+/*
+#include <stdio.h>
 
 int	main(void)
 {
-    int s[10];
-	int	c;
+	char	s[10];
+	char	c;
 
-    c = 1;
-    
-    memset(s, c, 5);
-    printf("\nBuffer contents: %s\n", s);
+	c = 'a';
+	ft_memset(s, c, 5);
+	printf("\ns  contents: %s\n", s);
+	ft_memset(s + 5, 'b', 4);
+	printf("\ns  contents: %s\n", s);
 }
+*/
