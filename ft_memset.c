@@ -20,14 +20,16 @@
 */
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*temp_s;
+	unsigned char	*temp_ptr;
+	unsigned char	temp_c;
 	size_t			i;
 
 	i = 0;
-	temp_s = s;
+	temp_ptr = s;
+	temp_c = c;
 	while (i < n)
 	{
-		temp_s[i] = (unsigned char)c;
+		temp_ptr[i] = temp_c;
 		i++;
 	}
 	return (s);
