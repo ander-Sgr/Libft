@@ -12,26 +12,26 @@
 
 #include "libft.h"
 
-size_t  ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    size_t  size_src;
-    size_t  i;
+	size_t	size_src;
+	size_t	i;
 
-    i = 0;
-    
-    while (i < size - 1 && src[i] != '\0')
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    size_src = ft_strlen(src);
-    return (size_src);
+	i = 0;
+	while (i < size - 1 && src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	size_src = ft_strlen(src);
+	return (size_src);
 }
 
 /*
 #include <stdio.h>
-int main() {
+
+int	main(void) {
     char destino[1];
     char origen[] = "Hola, mundo!";
     
@@ -43,6 +43,6 @@ int main() {
     printf("Cadena copiada: %s\n", destino);
     printf("Longitud total después de la copia: %zu\n", resultado);
 
-    return 0;
+    return (0);
 }
 */
