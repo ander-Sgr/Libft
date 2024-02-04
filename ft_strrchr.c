@@ -27,20 +27,21 @@ char	*ft_strrchr(const char *s, int c)
 		}
 		i++;
 	}
-	return (char *)(found_last);
+	return ((char *)(found_last));
 }
-
 /*
 #include <stdio.h>
 #include <string.h>
 
 int	main(void)
 {
-	const char *cadena = "Hola MundoH";
-	char caracter = 'H';
+	const char	*cadena;
+	char		caracter;
+	char		*resultado;
 
-	char *resultado = ft_strrchr(cadena, caracter);
-
+	cadena = "Hola MundoH";
+	caracter = 'H';
+	resultado = ft_strrchr(cadena, caracter);
 	if (resultado != NULL)
 	{
 		printf("Última aparición de '%c' encontrada en la posición: %ld\n",
@@ -51,7 +52,6 @@ int	main(void)
 	{
 		printf("El carácter '%c' no se encontró en la cadena.\n", caracter);
 	}
-
 	return (0);
 }
 */

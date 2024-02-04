@@ -15,18 +15,18 @@
 // busqueda secuencial
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 		{
-			return (char *)&s[i];
+			return ((char *)&s[i]);
 		}
 		i++;
 	}
-	return NULL;
+	return (NULL);
 }
 
 /*
@@ -35,9 +35,11 @@ char	*ft_strchr(const char *s, int c)
 
 int	main(void)
 {
-	const char *str = "Hola, mundo!";
-	char buscar = 'a';
+	const char	*str;
+	char		buscar;
 
+	str = "Hola, mundo!";
+	buscar = 'a';
 	if (strchr(str, buscar))
 	{
        // char *resultado = strchr(str, buscar);
