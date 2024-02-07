@@ -11,30 +11,29 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void    *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-    unsigned char*  mem;
-    size_t          i;
+	unsigned char	*mem;
+	size_t			i;
 
-    i = 0;
-    mem = malloc(count * size);
-    if (mem == NULL)
-        return NULL;
-    while (i < count * size)
-    {
-        mem[i] = 0;
-        i++;
-    }
-    return aux;
+	i = 0;
+	mem = malloc(count * size);
+	if (mem == NULL)
+		return (NULL);
+	while (i < count * size)
+	{
+		mem[i] = 0;
+		i++;
+	}
+	return (mem);
 }
 
 /*
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int	main(void) {
     size_t num_elements = 5;
     size_t size_of_element = sizeof(int);
 
@@ -43,7 +42,7 @@ int main() {
 
     if (arr == NULL) {
         fprintf(stderr, "Error al asignar memoria con calloc.\n");
-        return 1;
+        return (1);
     }
 
     // Imprimir los elementos del array (deberían ser 0)
@@ -56,6 +55,6 @@ int main() {
     // Liberar la memoria asignada
     free(arr);
 
-    return 0;
+    return (0);
 }
 */

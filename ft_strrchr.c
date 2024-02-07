@@ -27,6 +27,8 @@ char	*ft_strrchr(const char *s, int c)
 		}
 		i++;
 	}
+	if (c == '\0')
+		found_last = &s[i];
 	return ((char *)(found_last));
 }
 /*

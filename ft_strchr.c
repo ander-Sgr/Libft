@@ -26,10 +26,12 @@ char	*ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
+	if (c == '\0')
+		return ((char *)&s[i]);
 	return (NULL);
 }
 
-/*
+/**
 #include <stdio.h>
 #include <string.h>
 
