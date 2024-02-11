@@ -13,60 +13,84 @@
 #include "libft.h"
 #include <stdio.h>
 
-static int	is_sequence(char const *str, char const *to_find)
+static int	ft_get_first_pos(char const *str, char const *set);
+static int	ft_get_last_pos(char const *str, char const *set);
+
+int	ft_get_first_pos(char const *str, char const *set)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	len_str;
 
 	i = 0;
-	while (str[i] != '\0')
+	len_str = ft_strlen(str);
+	while (i < len_str)
 	{
-		j = 0;
-		while (to_find[j] != '\0' && str[i + j] == to_find[j])
-			j++;
-		if (to_find[j] == '\0')
-			return (1);
+		if (!ft_strchr(set, str[i]))
+			break ;
 		i++;
 	}
-	return (-1);
+	return (i);
 }
 
-static int	first_position(char const *str, char const *set)
+int	ft_get_last_pos(char const *str, char const *set)
 {
-	if (is_sequence(str, set) != -1)
+	size_t	i;
+	size_t	len_str;
+
+	i = 0;
+	len_str = ft_strlen(str);
+	while (i < len_str)
 	{
-		return ((int)ft_strlen(set));
+		if (ft_strchr(set, str[len_str - i - 1]) == 0)
+			break ;
+		i++;
 	}
-	return (-1);
+	return (len_str - i);
 }
 
-static int	last_position(char const *str, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
-	int	set_length;
+	char	*trim_result;
+	int		len_trim;
+	int		start;
+	int		end;
 
-	i = (int)ft_strlen(str) - 1;
-	while (i >= 0)
-	{
-
-	}
-
+	start = ft_get_first_pos(s1, set);
+	end = ft_get_last_pos(s1, set);
+	len_trim = (ft_get_last_pos(s1, set) - ft_get_first_pos(s1, set));
+	if (s1 == NULL)
+		return (NULL);
+	if (set == NULL)
+		return (ft_strdup(s1));
+	if (start >= end)
+		return (ft_strdup(""));
+	trim_result = (char *)malloc((len_trim + 1) * sizeof(char));
+	if (trim_result == NULL)
+		return (NULL);
+	ft_strlcpy(trim_result, s1 + start, len_trim + 1);
+	return (trim_result);
 }
 
-static int	get_trim_len(char const *str, char const *set)
-{
-    printf("last post result: %d: ", last_position(str, set));
-	return (last_position(str, set) - first_position(str, set));
-}
-
+/*
 int	main(void)
 {
-	const char	*cadena;
-	const char	*secuencia;
-	int			posicion;
+	char const	*str;
+	char const	*set;
+	char		*result_trim;
+	int			start;
+	int			end;
+	int			total;
 
-	cadena = "    Hello, world!    ";
-	secuencia = "   ";
-	posicion = get_trim_len(cadena, secuencia);
-	printf("pos: %d: ", posicion);
+	str = "abc";
+	set = "ab";
+	result_trim = ft_strtrim(str, "");
+	printf("result trim : %s\n", result_trim);
+	
+	start = ft_get_first_pos(str, set);
+	end = ft_get_last_pos(str, set);
+	total = ft_total_len(str, set);
+	printf("total len: %d\n", total);
+	printf("pos init : %d\n", start);
+	printf("post final : %d\n", end);
 }
+*/
