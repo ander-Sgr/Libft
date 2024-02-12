@@ -44,45 +44,57 @@ static char	**ft_allocate_memory(int words_count)
 	if (words_count == 0)
 	{
 		matrix = (char **)malloc(sizeof(char *));
-		if (matrix != NULL)
-			matrix[0] = NULL;
+		matrix[0] = '\0';
 		return (matrix);
 	}
 	matrix = (char **)malloc((words_count + 1) * sizeof(char *));
 	return (matrix);
 }
 
-char	*fill_word(const char *s, int start, int end)
+char	*ft_fill_word(const char *s, int start, int end)
 {
 	char	*str;
-	int		i;
 	int		len_str;
+	int		i;
 
-	len_str = end - start;
+	len_str = (end - start) + 1;
 	str = (char *)malloc((len_str + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	strlcpy(str, s + start, len_str + 1);
+	i = 0;
+	while (i < len_str)
+	{
+		str[i] = s[start];
+		i++;
+		start++;
+	}
 	str[len_str] = '\0';
 	return (str);
 }
 
-
 char	**ft_split(char const *s, char c)
 {
-}
+	char	**result_split;
+	int		i;
+	int		start;
+	int		word_count;
 
-
-#include <stdio.h>
-
-int	main(void)
-{
-	char const	*s;
-	char		c;
-	int			total_words;
-
-	s = "   ,,,,hola, que,tal, a,todos,,,,";
-	c = ',';
-	total_words = ft_count_words(s, c);
-	printf("Total words: %d", total_words); // should be 5
+	result_split = ft_allocate_memory(ft_count_words(s, c));
+	i = 0;
+	word_count = 0;
+	start = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			if (start != i)
+				result_split[word_count++] = ft_fill_word(s, start, i - 1);
+			start = i + 1;
+		}
+		i++;
+	}
+	if (start != i)
+		result_split[word_count++] = ft_fill_word(s, start, i - 1);
+	result_split[word_count] = NULL;
+	return (result_split);
 }
