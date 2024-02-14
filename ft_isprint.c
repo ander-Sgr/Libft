@@ -12,7 +12,6 @@
 
 #include "libft.h"
 
-// 32 127 printables characters incluido el espacio
 int	ft_isprint(int c)
 {
 	if (c > 31 && c < 127)
@@ -22,6 +21,7 @@ int	ft_isprint(int c)
 	else
 		return (0);
 }
+
 /*
 #include <stdio.h>
 int	main(void)
