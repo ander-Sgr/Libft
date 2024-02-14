@@ -12,10 +12,6 @@
 
 #include "libft.h"
 
-/**
- * rellna ceros en el puntero desde n 
- * se ha de usar '\0'
-*/
 void	ft_bzero(void *s, size_t n)
 {
 	char	*temp_ptr;
