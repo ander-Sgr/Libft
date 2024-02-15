@@ -6,7 +6,7 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 13:41:12 by aestrell          #+#    #+#             */
-/*   Updated: 2024/01/13 13:41:12 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/15 23:44:56 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char		*temp_ptr_dest;
 	size_t				i;
 
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	i = 0;
 	temp_ptr_src = src;
 	temp_ptr_dest = dest;
@@ -39,13 +41,11 @@ int	main(void)
 	char	*result;
 
 	src = "bon dia";
-	result = (char *)ft_memcpy(dest, src, strlen(src));
+	result = (char *)ft_memcpy(dest, src, ft_strlen(src));
 	printf("src %s\n", src);
 	printf("destination %s\n", dest);
 	if (result == dest)
-	{
 		printf("done");
-	}
 	else
 		printf("faild");
 }

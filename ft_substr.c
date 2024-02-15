@@ -6,11 +6,22 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 21:34:56 by aestrell          #+#    #+#             */
-/*   Updated: 2024/02/05 21:34:56 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/14 20:18:07 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*check_substr(void)
+{
+	char	*substr;
+
+	substr = (char *)malloc(sizeof(char));
+	if (substr == NULL)
+		return (NULL);
+	substr[0] = '\0';
+	return (substr);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -21,8 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (start > ft_strlen(s))
 	{
-		substr = (char *)malloc(sizeof(char));
-		substr[0] = '\0';
+		substr = check_substr();
 		return (substr);
 	}
 	if ((start + len) > ft_strlen(s))

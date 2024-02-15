@@ -6,10 +6,9 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:44:30 by aestrell          #+#    #+#             */
-/*   Updated: 2024/01/10 18:44:30 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/15 22:53:43 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {
@@ -20,3 +19,15 @@ int	ft_isdigit(int c)
 	else
 		return (0);
 }
+
+/*
+#include <stdio.h>
+int main(void)
+{
+	int c = '8';
+	if(ft_isdigit(c))
+		printf("the input is digit: %c", c);
+	else
+		printf("no digit");
+}
+*/

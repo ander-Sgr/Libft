@@ -6,7 +6,7 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:33:42 by aestrell          #+#    #+#             */
-/*   Updated: 2024/01/18 18:33:42 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/16 00:24:31 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	size_src;
 	size_t	i;
 
-	if (dst == NULL)
-		return (0);
-	if (size == 0 && src != NULL)
+	if (size == 0)
 		return (ft_strlen(src));
 	i = 0;
-	while (i < size - 1 && src[i] != '\0')
+	while (i < (size - 1) && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;
@@ -34,10 +32,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 /*
 #include <stdio.h>
-
 int	main(void) {
-    char destino[1];
-    char origen[] = "Hola, mundo!";
+    char destino[13];
+    char *origen = "Hola, mundo!";
     
     size_t tamano_destino = sizeof(destino);
     

@@ -6,7 +6,7 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 13:10:39 by aestrell          #+#    #+#             */
-/*   Updated: 2024/01/13 13:10:39 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/15 23:16:55 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,13 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
+
+/*
+#include <stdio.h>
+int main(void) {
+    char *s = "Hello, World!";
+    printf("before ft_bzero: %s\n", s);
+	ft_bzero(s, 4);
+    printf("after ft_bzero: %s\n", s);
+}
+*/

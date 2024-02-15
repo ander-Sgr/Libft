@@ -6,13 +6,11 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:25:58 by aestrell          #+#    #+#             */
-/*   Updated: 2024/01/11 17:25:58 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/15 22:57:33 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// a z A Z  0 9
 
 int	ft_isalnum(int c)
 {
@@ -27,14 +25,14 @@ int	ft_isalnum(int c)
 
 /*
 #include <stdio.h>
-
 int	main(void)
 {
     char    c;
-    int result;
 
-    c = '9';
-    result = ft_isalnum(c);
-    printf("%d\n", result);
+    c = 'A';
+	if (ft_isalnum(c))
+		printf("is alphanum");
+	else
+		printf("not alpha");
 }
 */

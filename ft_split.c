@@ -6,7 +6,7 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 02:50:41 by aestrell          #+#    #+#             */
-/*   Updated: 2024/02/11 02:50:41 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/15 20:33:54 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,27 @@ static int	ft_count_words(char const *s, char separator)
 	return (words_count);
 }
 
-static char	**ft_allocate_memory(int words_count)
+static char	**ft_free_split(char **result_split)
 {
-	char	**matrix;
+	size_t	i;
 
-	if (words_count == 0)
+	i = 0;
+	while (result_split[i])
 	{
-		matrix = (char **)malloc(sizeof(char *));
-		matrix[0] = '\0';
-		return (matrix);
+		free(result_split[i]);
+		i++;
 	}
-	matrix = (char **)malloc((words_count + 1) * sizeof(char *));
-	return (matrix);
+	free(result_split);
+	return (NULL);
 }
 
-char	*ft_fill_word(const char *s, int start, int end)
+static char	*ft_fill_word(const char *s, int start, int end)
 {
 	char	*str;
 	int		len_str;
 	int		i;
 
-	len_str = (end - start) + 1;
+	len_str = (end - start);
 	str = (char *)malloc((len_str + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
@@ -72,29 +72,58 @@ char	*ft_fill_word(const char *s, int start, int end)
 	return (str);
 }
 
+static int	find_next_word(const char *s, char c, int *start, int *end)
+{
+	while (s[*start] != '\0' && s[*start] == c)
+	{
+		(*start)++;
+	}
+	*end = *start;
+	while (s[*end] != '\0' && s[*end] != c)
+	{
+		(*end)++;
+	}
+	return (*end - *start);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**result_split;
-	int		i;
 	int		start;
-	int		word_count;
+	int		end;
+	int		word_index;
 
-	result_split = ft_allocate_memory(ft_count_words(s, c));
-	i = 0;
-	word_count = 0;
+	if (s == NULL)
+		return (NULL);
+	result_split = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
+	if (result_split == NULL)
+		return (NULL);
 	start = 0;
-	while (s[i] != '\0')
+	end = 0;
+	word_index = 0;
+	while (find_next_word(s, c, &start, &end))
 	{
-		if (s[i] == c)
-		{
-			if (start != i)
-				result_split[word_count++] = ft_fill_word(s, start, i - 1);
-			start = i + 1;
-		}
-		i++;
+		result_split[word_index] = ft_fill_word(s, start, end);
+		if (result_split[word_index] == NULL)
+			return (ft_free_split(result_split));
+		word_index++;
+		start = end;
 	}
-	if (start != i)
-		result_split[word_count++] = ft_fill_word(s, start, i - 1);
-	result_split[word_count] = NULL;
+	result_split[word_index] = NULL;
 	return (result_split);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*str;
+	char	set;
+	char	**result;
+
+	str = "hello!";
+	set = '';
+	result = ft_split(str, set);
+	
+}
+*/
