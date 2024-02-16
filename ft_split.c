@@ -6,7 +6,7 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 02:50:41 by aestrell          #+#    #+#             */
-/*   Updated: 2024/02/15 20:33:54 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/16 17:02:51 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ char	**ft_split(char const *s, char c)
 	result_split[word_index] = NULL;
 	return (result_split);
 }
+
 /*
 #include <stdio.h>
 
@@ -120,10 +121,22 @@ int	main(void)
 	char	*str;
 	char	set;
 	char	**result;
+	int		i;
 
-	str = "hello!";
-	set = '';
+	str = "hello, how,,,, are, you,,";
+	set = ',';
 	result = ft_split(str, set);
-	
+	//int total_words = ft_count_words(str, set);
+	if (result == NULL)
+		printf("error agined memory");
+	printf("word splitted\n");
+	i = 0;
+	while (result[i] != NULL)
+	{
+		printf("%s\n", result[i]);
+		free(result[i]);
+		i++;
+	}
+	free(result);
 }
 */

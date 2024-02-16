@@ -6,7 +6,7 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 20:27:43 by aestrell          #+#    #+#             */
-/*   Updated: 2024/02/16 00:36:40 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/16 17:10:42 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (size_src);
 }
 
-/**
- * concatena hasta el max dst es decir
- * dst[5] = "hh"
- * src[7] = "hola mundo"
- * resultado sera -> hhol\0
-*/

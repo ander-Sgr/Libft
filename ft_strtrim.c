@@ -6,17 +6,14 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 00:18:43 by aestrell          #+#    #+#             */
-/*   Updated: 2024/02/14 21:37:50 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/16 17:33:10 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static int	ft_get_first_pos(char const *str, char const *set);
-static int	ft_get_last_pos(char const *str, char const *set);
-
-int	ft_get_first_pos(char const *str, char const *set)
+static int	ft_get_first_pos(char const *str, char const *set)
 {
 	size_t	i;
 	size_t	len_str;
@@ -32,7 +29,7 @@ int	ft_get_first_pos(char const *str, char const *set)
 	return (i);
 }
 
-int	ft_get_last_pos(char const *str, char const *set)
+static int	ft_get_last_pos(char const *str, char const *set)
 {
 	size_t	i;
 	size_t	len_str;

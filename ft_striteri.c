@@ -6,7 +6,7 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 01:02:43 by aestrell          #+#    #+#             */
-/*   Updated: 2024/02/14 01:02:43 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/16 17:10:19 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,22 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i++;
 	}
 }
+
+/*
+#include <ctype.h>
+#include <stdio.h>
+
+void	to_lowercase(unsigned int index, char *c)
+{
+	if (index % 2 != 0)
+		*c = ft_toupper(*c);
+}
+int	main(void)
+{
+	char	str[];
+
+	str[] = "Hello Word!";
+	ft_striteri(str, &to_lowercase);
+	printf("result: %s\n", str);
+}
+*/

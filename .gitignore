@@ -1,6 +1,6 @@
 .vscode
-.a
-.o
+#*.a
+#*.o
 .DS_STORE
 a.exe
 o.exe

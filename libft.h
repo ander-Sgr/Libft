@@ -6,12 +6,13 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:22:19 by aestrell          #+#    #+#             */
-/*   Updated: 2024/01/11 17:22:19 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/16 17:11:13 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <ctype.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>

@@ -6,13 +6,13 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 21:34:56 by aestrell          #+#    #+#             */
-/*   Updated: 2024/02/14 20:18:07 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/16 17:32:43 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*check_substr(void)
+static char	*check_substr(void)
 {
 	char	*substr;
 

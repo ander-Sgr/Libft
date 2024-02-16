@@ -6,7 +6,7 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 18:32:21 by aestrell          #+#    #+#             */
-/*   Updated: 2024/02/05 18:32:21 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/16 17:03:41 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@ char	*ft_strdup(const char *str)
 	int		len;
 	char	*new_str;
 
-	len = 0;
-	while (str[len])
-		len++;
+	len = ft_strlen(str);
 	new_str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!(new_str))
+	if (new_str == NULL)
 		return (NULL);
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
 	{
 		new_str[i] = str[i];
 		i++;
@@ -46,15 +44,10 @@ int	main(void) {
     char *copia = ft_strdup(original);
 
     if (copia == NULL) {
-        fprintf(stderr, "Error al duplicar la cadena.\n");
-        return (1);
+        printf("Error");
     }
-
-    // Imprimir la cadena original y la copia
     printf("Original: %s\n", original);
     printf("Copia:    %s\n", copia);
-
-    // Liberar la memoria asignada por strdup
     free(copia);
 
     return (0);
