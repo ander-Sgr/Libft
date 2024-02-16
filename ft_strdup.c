@@ -6,7 +6,7 @@
 /*   By: aestrell <aestrell@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 18:32:21 by aestrell          #+#    #+#             */
-/*   Updated: 2024/02/16 17:03:41 by aestrell         ###   ########.fr       */
+/*   Updated: 2024/02/16 19:04:49 by aestrell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,7 @@ char	*ft_strdup(const char *str)
 
 int	main(void) {
     const char *original = "Hola, mundo";
-
-    // Duplicar la cadena
     char *copia = ft_strdup(original);
-
     if (copia == NULL) {
         printf("Error");
     }
